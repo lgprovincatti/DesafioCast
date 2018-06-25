@@ -1,0 +1,43 @@
+﻿@model Core.Model.Adotante
+
+@{
+    ViewBag.Title = "Detalhes da Adoção";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalhes da Adoção</h2>
+
+<div>
+    <h4>Adotante</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Animal.Raca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Animal.Raca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pessoa.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pessoa.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataAdocao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataAdocao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Voltar a Lista de Adoção", "Index")
+</p>

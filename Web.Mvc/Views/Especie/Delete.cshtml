@@ -1,0 +1,33 @@
+﻿@model Core.Model.Especie
+
+@{
+    ViewBag.Title = "Deletando Espécie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Deletando Espécie</h2>
+
+<h3>Você Tem Certeza que Deseja Efetuar a Exclusão da Espécie?</h3>
+<div>
+    <h4>Espécie</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir Espécie" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar a Lista de Espécie", "Index")
+        </div>
+    }
+</div>

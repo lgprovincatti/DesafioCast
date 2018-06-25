@@ -1,0 +1,64 @@
+﻿@model Core.Model.Adotante
+
+@{
+    ViewBag.Title = "Deletando Adoção";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Devolver</h2>
+
+<h3>Esse amiguinho será realmente devolvido?</h3>
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Name("Espécie")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Animal.Especie.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Animal.Raca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Animal.Raca)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Animal.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Animal.Nome)
+        </dd>
+        <dt>
+            @Html.Name("Adotado Por")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pessoa.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataAdocao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataAdocao)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Confirmar" class="btn btn-success" /> |
+            
+                @Html.ActionLink("Lista de Adotados", "Index", null, new { @class = "btn btn-mini btn-info" })
+           
+        </div>
+    }
+</div>
